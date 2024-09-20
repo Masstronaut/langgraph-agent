@@ -40,7 +40,7 @@ export const graph = new StateGraph(MessagesAnnotation)
   .addNode("tools", new ToolNode(tools))
   .addConditionalEdges("agent", shouldUseTool)
   .addEdge("tools", "agent")
-  .compile({ checkpointer: new MemorySaver(), interruptBefore: ["tools"] });
+  .compile({ checkpointer: new MemorySaver() });
 
 /*
 // Create a command line interface to interact with the chat bot
